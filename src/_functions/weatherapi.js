@@ -8,7 +8,7 @@ exports.handler = async function(event, _, callback) {
   const url = `${WEATHER_API_URL}?lat=${lat}&lon=${long}&units=metric&appid=${WEATHER_API_KEY}`;
   const response = await axios.get(url).catch((err) => {
     console.log(url);
-    return err;
+    throw new Error(`${err.message} ${url}`);
   });
   callback(null, {
     statusCode: 200,
