@@ -5,6 +5,7 @@ exports.handler = async function(event, _, callback) {
   const { lat, long } = event.queryStringParameters;
 
   const url = `${WEATHER_API_URL}?lat=${lat}&lon=${long}&units=metric&appid=${WEATHER_API_KEY}`;
+  console.log('toto', url)
   const response = await axios.get(url);
   callback(null, {
     statusCode: 200,
