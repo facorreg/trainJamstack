@@ -3,7 +3,7 @@ const countries = require('./countries.json')
 require('dotenv').config();
 
 async function getNews(country) {
-  const { API_NEWS_KEY: apiKey, API_NEWS_URL: url } = process.env;
+  const { NEWS_API_KEY: apiKey, NEWS_API_URL: url } = process.env;
   const args = `?apiKey=${apiKey}&country=${country}&pageSize=5`;
   
   try {
